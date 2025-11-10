@@ -81,14 +81,18 @@ def visualize_motion(motion, sub_name="X05", out_name="motion.gif"):
 
     # --- GIFとして保存 ---
     out_path = os.path.join("visual_results", out_name)
-    imageio.mimsave(out_path, images, fps=50)
+    imageio.mimsave(out_path, images, fps=50)  # 本当は60Hzらしい
     print(f"✅ GIF saved to: {out_path}")
 
 
 if __name__ == '__main__':
     motion_set = load_skl()
+    # sub_name = 'X08'
+    # sample_idx = 11
+    # motion = motion_set[sub_name][sample_idx]
+    # visualize_motion(motion, sub_name=sub_name, out_name=f"{sub_name}_sample{sample_idx}.gif")
 
-    sub_name = 'X07'
-    sample_idx = 0
-    motion = motion_set[sub_name][sample_idx]
-    visualize_motion(motion, sub_name=sub_name, out_name=f"{sub_name}_sample{sample_idx}.gif")
+    sub_names = ['X05', 'X07', 'X08', 'X09']
+    for sub_name in sub_names:
+        for sample_idx, motion in enumerate(motion_set[sub_name]):
+            visualize_motion(motion, sub_name=sub_name, out_name=f"{sub_name}_sample{sample_idx}.gif")

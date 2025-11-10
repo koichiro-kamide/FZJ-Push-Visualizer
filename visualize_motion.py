@@ -81,7 +81,7 @@ def visualize_motion(motion, sub_name="X05", out_name="motion.gif"):
 
     # --- GIFとして保存 ---
     out_path = os.path.join("visual_results", out_name)
-    imageio.mimsave(out_path, images, fps=50)  # 本当は60Hzらしい
+    imageio.mimsave(out_path, images, fps=50, loop=0)  # 実際は60Hz
     print(f"✅ GIF saved to: {out_path}")
 
 

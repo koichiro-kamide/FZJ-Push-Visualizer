@@ -138,7 +138,7 @@ def visualize_motion_ipm(motion, seq_ipm_sts, sub_name, sample_idx, save_dir="vi
         os.remove(tmp_path)
 
     save_path = os.path.join(save_dir, f'{sub_name}-sample{sample_idx}.gif')
-    imageio.mimsave(save_path, frames, fps=50)  # 実際は60Hz
+    imageio.mimsave(save_path, frames, fps=50, loop=0)  # 実際は60Hz
     print(f"✅ Saved {save_path}")
 
 
@@ -158,4 +158,3 @@ if __name__ == '__main__':
     # for sub_name in sub_names:
     #     for sample_idx, (motion, ipm) in enumerate(zip(motion_set[sub_name], ipm_set[sub_name])):
     #         visualize_motion_ipm(motion, ipm, sub_name, sample_idx)
-    

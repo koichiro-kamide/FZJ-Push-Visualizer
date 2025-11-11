@@ -1,5 +1,5 @@
 ## The aim of this code
-Visualize [FZJ Push dataset](https://www.sciencedirect.com/science/article/pii/S0925753523001157) by using python.
+Visualize single person motions of [FZJ Push dataset](https://www.sciencedirect.com/science/article/pii/S0925753523001157) by using python.
 
 ## Dependencies
 Below is the key environment with the recommended version under which the code was developed:  
